@@ -3,5 +3,7 @@
   gather_facts: no
   tasks:
     - name: test
-      win_shell: whoami
+      win_command: whoami
+      register: whoami_out
+    - debug: var=whoami_out
   
